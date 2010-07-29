@@ -9,6 +9,9 @@ alias etts='mate app config lib db public script spec test vendor/plugins vendor
 alias mr='mate CHANGELOG app config db lib public script spec test'
 
 function tm() {
-  cd $1
-  mate $1
+  mate
+	if [[ $(ls -l | grep tmproj | wc -l) -eq 0 ]]
+	then mate .
+	else open *.tmproj
+	fi
 }
