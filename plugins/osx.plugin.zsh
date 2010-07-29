@@ -1,11 +1,9 @@
-function tab() {
-  osascript 2>/dev/null <<EOF
-    tell application "System Events"
-      tell process "Terminal" to keystroke "t" using command down
-    end
-    tell application "Terminal"
-      activate
-      do script with command "cd \"$PWD\"; $*" in window 1
-    end tell
-EOF
+function nt() {
+  terminal_clone_command="
+tell application \"Terminal\"
+  tell application \"System Events\" to tell process \"Terminal\" to keystroke \"t\" using command down
+  do script with command \"cd $PWD; clear\" in  selected tab of the front window
+end tell
+"
+  echo "$terminal_clone_command" | osascript > /dev/null
 }
