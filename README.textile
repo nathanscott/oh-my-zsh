@@ -1,3 +1,17 @@
+h2. Fork Notes
+
+I've changed some functions to behave in ways I prefer, and redefined some aliases to point to slightly different commands... have a look through the commit logs to figure out what's new.
+
+Also: if you want to use my theme, you'll want the git plugin. The important parts of my setup in my @.zshrc@ file are as follows:
+
+<pre><code>export ZSH=$HOME/.oh-my-zsh
+export ZSH_THEME="pat"
+plugins=(git heroku osx rails ruby textmate)
+
+source $ZSH/oh-my-zsh.sh</code></pre>
+
+Now, back to your regular programming:
+
 A handful of functions, auto-complete helpers, and stuff that makes you shout...
 
 bq. "OH MY ZSHELL!"
