@@ -18,7 +18,10 @@ function pat_prompt {
   if [[ ${#branch} -eq 0 ]]
     then (( ruby_size = ruby_size + 1 ))
   else
-    (( branch_size = branch_size + 5 ))
+    (( branch_size = branch_size + 4 ))
+    if [[ -n $(git status -s 2> /dev/null) ]]; then
+      (( branch_size = branch_size + 2 ))
+    fi
   fi
   
   (( spare_width = ${spare_width} - (${path_size} + ${branch_size} + ${ruby_size}) ))
