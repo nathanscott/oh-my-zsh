@@ -1,8 +1,3 @@
-# Aliases
-alias g='git status -sb'
-alias l='git log --oneline --decorate'
-alias d='git diff --word-diff'
-
 grey='\e[0;90m'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$grey%}("
